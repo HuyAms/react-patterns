@@ -17,3 +17,11 @@ The Compound Components Pattern enables you to provide a set of components that 
 The Prop Collections and Getters Pattern allows your hook to support common use cases for UI elements people build with your hook.
 
 👉 Example: [Conform - getFormProps(https://conform.guide/api/react/getFormProps)]
+
+## State Initializer
+
+The state initializer pattern is a way to initialize (and reset) the state of a component in a predictable way.
+
+## State Reducer
+
+The State Reducer Pattern inverts control over the state management of your hook and/or component to the developer using it so they can control the state changes that happen when dispatching events.

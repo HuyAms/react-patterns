@@ -7,6 +7,7 @@ import { LastRef } from "./components/LastRef";
 import { CompoundComponent } from "./components/CompoundComponent";
 import { PropsCollectionGetters } from "./components/PropsCollectionGetters";
 import { StateInitializer } from "./components/StateInitializer";
+import { StateReducer } from "./components/StateReducer";
 
 function Menu() {
   return (
@@ -18,6 +19,7 @@ function Menu() {
       <li><a href="/compound-component">Compound Component</a></li>
       <li><a href="/prop-collections-getters">Props Collection and Getters</a></li>
       <li><a href="/state-initializer">State Initializer</a></li>
+      <li><a href="/state-reducer">State Reducer</a></li>
     </ul>
     </>
   )
@@ -49,6 +51,10 @@ function App() {
     {
       path: "/state-initializer",
       element: <StateInitializer/>,
+    },
+    {
+      path: "/state-reducer",
+      element: <StateReducer/>,
     },
   ]);
 

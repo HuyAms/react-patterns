@@ -21,19 +21,15 @@ function toggleReducer(state: ToggleState, action: ToggleAction) {
     }
 }
 
-function useToggle({initialOn = false}: {initialOn?: boolean} = {}) {
-
-    // Initial is always initial, it will not change
-    // State initializer pattern here
+function useToggle({initialOn = false, stateReducer = toggleReducer} = {}) {
     const initialStateRef = React.useRef({on: initialOn});
 
-    const [{on}, dispatch] = React.useReducer(toggleReducer, initialStateRef.current);
+    const [{on}, dispatch] = React.useReducer(stateReducer, initialStateRef.current);
 
     function toggle() {
         dispatch({type: 'TOGGLE'})
     }
 
-    // Allows to reset to default state
     function reset() {
         dispatch({type: 'RESET', initialState: initialStateRef.current})
     }
@@ -52,24 +48,33 @@ function useToggle({initialOn = false}: {initialOn?: boolean} = {}) {
     return {on, toggle, reset, getTogglerProps};
 }
 
-export function StateInitializer() {
+export function StateReducer() {
+    const [clickCount, setClickCount] = React.useState(0)
+    const clickTooMuch = clickCount > 3
 
-    const [initialOn, setInitialOn] = React.useState(true)
+    const {getTogglerProps} = useToggle({
+        stateReducer: (state, action) => {
 
-    const {reset, getTogglerProps} = useToggle({initialOn});
+            const updatedState = toggleReducer(state, action)
+
+            if (action.type === 'TOGGLE' && clickTooMuch) {
+                return {...updatedState, on: true}
+            }
+
+            return updatedState
+        }
+    });
 
     return (
         <div>
             <div className='mb-3'>
-                <h1 className='text-3xl mb-3'>State Initializer</h1>
-                <p>Now we support state reset</p>
-                <p>Even we change the initialOn, it will be always reset to the initial state which is ON</p>
+                <h1 className='text-3xl mb-3'>State Reducer</h1>
+                <p>Parent components wants to modify the state of the component</p>
             </div>
-            <div><button className="text-blue-600" onClick={() => setInitialOn(on => !on)}>Initial On: {initialOn.toString()}</button></div>
-            <Switch {...getTogglerProps({})}/>
-            <div className='mt-5'>
-                <button onClick={reset}>Reset</button>
-            </div>
+            <Switch 
+                {...getTogglerProps({onClick: () => setClickCount(clickCount + 1)})}
+            />
+            {clickTooMuch ? <p>Too many clicks</p> : <p>Click count: {clickCount}</p>}
         </div>
     )
 }
