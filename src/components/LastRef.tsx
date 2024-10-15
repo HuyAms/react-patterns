@@ -40,6 +40,7 @@ export function LastRef() {
 
     return (
         <div>
+            <h1 className='text-3xl mb-3'>Latest Ref</h1>
             <p>This send button is debounced for 1 sec. Try to click it multiple times!</p>
             <p className='mb-10'>Form sent count: {count}</p>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={debounceHandleButtonClick}>Submit form</button>

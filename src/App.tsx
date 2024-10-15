@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import { Composition } from "./components/Composition";
 import { LastRef } from "./components/LastRef";
+import { CompoundComponent } from "./components/CompoundComponent";
 
 function Menu() {
   return (
@@ -12,6 +13,7 @@ function Menu() {
     <ul>
       <li><a href="/composition">Composition</a></li>
       <li><a href="/last-ref">Last Ref</a></li>
+      <li><a href="/compound-component">Compound Component</a></li>
     </ul>
     </>
   )
@@ -31,6 +33,10 @@ function App() {
     {
       path: "/last-ref",
       element: <LastRef/>,
+    },
+    {
+      path: "/compound-component",
+      element: <CompoundComponent/>,
     },
   ]);
 
