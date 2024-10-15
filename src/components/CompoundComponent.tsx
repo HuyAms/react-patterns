@@ -1,4 +1,5 @@
 import React from 'react'
+import { Switch } from './Switch'
 
 type ToggleContextType = {
     on: boolean,
@@ -50,25 +51,7 @@ function ToggleButton() {
 
     const {on, toggle} = useToggleContext()
 
-    return (
-        <div className="flex items-center space-x-2">
-        <button
-          role="switch"
-          aria-checked={on}
-          onClick={toggle}
-          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary ${
-            on ? 'bg-green-500' : 'bg-gray-200'
-          }`}
-        >
-          <span className="sr-only">Toggle Button</span>
-          <span
-            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                on ? 'translate-x-6' : 'translate-x-1'
-            }`}
-          />
-        </button>
-      </div>
-    )
+    return (<Switch on={on} onClick={toggle}/>)
 }
 
 

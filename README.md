@@ -11,3 +11,9 @@ The Latest Ref Pattern allows you to have a reference to the latest value of a p
 ## Compound Component
 
 The Compound Components Pattern enables you to provide a set of components that implicitly share state for a simple yet powerful declarative API for reusable components.
+
+## Props Collection and Getter
+
+The Prop Collections and Getters Pattern allows your hook to support common use cases for UI elements people build with your hook.
+
+👉 Example: [Conform - getFormProps(https://conform.guide/api/react/getFormProps)]
