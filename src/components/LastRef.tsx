@@ -22,7 +22,7 @@ function useDebounce(callback: () => void, delay: number) {
 
     return React.useMemo(
         () => debounce(() => latestCallbackRef.current(), delay), 
-        [delay] // no need to pass the callback here!
+        [delay] // no need to pass the callback here! Thanks to the Latest Ref pattern
     )
 }
 
@@ -35,7 +35,7 @@ export function LastRef() {
         setCount(count => count + 1)
     }
 
-    // with the latest ref pattern, we don't need to wrap the handleButtonClick function within a useCallback!
+    // with the latest ref pattern, we don't need to wrap the handleButtonClick function within a useCallback. Super cool!
     const debounceHandleButtonClick = useDebounce(handleButtonClick, 1000)
 
     return (
