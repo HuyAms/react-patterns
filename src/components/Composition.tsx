@@ -15,7 +15,7 @@ function Content({main, sideBar}: {main: React.ReactNode, sideBar: React.ReactNo
 function Header({username}: {username: React.ReactNode}) {
     return (
         <header className='mb-3'>
-           Welcome {username}
+           Welcome {username}. Please select an item.
         </header>
     )
 }
@@ -39,7 +39,7 @@ export function Composition() {
             return <p>No item selected</p>
         }
 
-        return (<p>{selectedItem}</p>)
+        return (<p>Selected: {selectedItem}</p>)
     }
 
     return (
