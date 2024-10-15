@@ -54,7 +54,8 @@ export function StateReducer() {
 
     const {getTogglerProps} = useToggle({
         stateReducer: (state, action) => {
-
+            // State reducer pattern here
+            // consumer can easily change the state based on the action
             const updatedState = toggleReducer(state, action)
 
             if (action.type === 'TOGGLE' && clickTooMuch) {
@@ -69,7 +70,7 @@ export function StateReducer() {
         <div>
             <div className='mb-3'>
                 <h1 className='text-3xl mb-3'>State Reducer</h1>
-                <p>Parent components wants to modify the state of the component</p>
+                <p>Try to toggle more than 4 times</p>
             </div>
             <Switch 
                 {...getTogglerProps({onClick: () => setClickCount(clickCount + 1)})}

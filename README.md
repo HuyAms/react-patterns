@@ -16,7 +16,7 @@ The Compound Components Pattern enables you to provide a set of components that 
 
 The Prop Collections and Getters Pattern allows your hook to support common use cases for UI elements people build with your hook.
 
-👉 Example: [Conform - getFormProps(https://conform.guide/api/react/getFormProps)]
+👉 Example: [Conform - getFormProps](https://conform.guide/api/react/getFormProps)
 
 ## State Initializer
 
