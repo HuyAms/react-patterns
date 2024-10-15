@@ -8,6 +8,7 @@ import { CompoundComponent } from "./components/CompoundComponent";
 import { PropsCollectionGetters } from "./components/PropsCollectionGetters";
 import { StateInitializer } from "./components/StateInitializer";
 import { StateReducer } from "./components/StateReducer";
+import { ControlProps } from "./components/ControlProps";
 
 function Menu() {
   return (
@@ -20,6 +21,7 @@ function Menu() {
       <li><a href="/prop-collections-getters">Props Collection and Getters</a></li>
       <li><a href="/state-initializer">State Initializer</a></li>
       <li><a href="/state-reducer">State Reducer</a></li>
+      <li><a href="/control-props">Control Props</a></li>
     </ul>
     </>
   )
@@ -55,6 +57,10 @@ function App() {
     {
       path: "/state-reducer",
       element: <StateReducer/>,
+    },
+    {
+      path: "/control-props",
+      element: <ControlProps/>,
     },
   ]);
 

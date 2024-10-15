@@ -25,3 +25,7 @@ The state initializer pattern is a way to initialize (and reset) the state of a 
 ## State Reducer
 
 The State Reducer Pattern inverts control over the state management of your hook and/or component to the developer using it so they can control the state changes that happen when dispatching events.
+
+## Controlled Props
+
+The Control Props pattern allows users to completely control state values within your component. This differs from the state reducer pattern in the fact that you can not only change the state changes based on actions dispatched but you also can trigger state changes from outside the component or hook as well.
