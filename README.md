@@ -1,5 +1,16 @@
 # React Patterns
 
+A small project to play around with some React patterns
+
+To run the project:
+
+```
+npm install
+npm run dev
+```
+
+The UI doesn't tell much. Read the code under the `components` folder.
+
 ## Composition
 
 The Composition and Layout Components Pattern helps to avoid the prop drilling problem and enhances the reusability of your components.
