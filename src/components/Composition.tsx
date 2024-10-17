@@ -21,7 +21,7 @@ function Header({username}: {username: React.ReactNode}) {
 }
 
 export function Composition() {
-    // state in parents
+    // state in the parent component
     const [username] = React.useState('Huy Trinh');
     const [items] = React.useState(['Item 1', 'Item 2', 'Item 3']);
     const [selectedItem, setSelectedItem] = React.useState<string | null>(null);
@@ -47,6 +47,7 @@ export function Composition() {
             <h1 className='text-3xl mb-3'>Composition pattern</h1>
             <Header username={<span>{username}</span>}/>
             {/* Here we render components and pass components, not props - avoid prop drilling */}
+            {/* We keep the state inside the parents, not passing down! */}
             <Content sideBar={renderSideBar()} main={renderMain()}/>
         </div>
     )

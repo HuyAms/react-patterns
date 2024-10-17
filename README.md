@@ -1,6 +1,6 @@
 # React Patterns
 
-A small project to play around with some React patterns
+A small project to play around with some React patterns - learned from [Kent C. Dodds](https://twitter.com/kentcdodds) 🙏
 
 To run the project:
 
@@ -15,7 +15,7 @@ The UI doesn't tell much. Read the code under the `components` folder.
 
 The Composition and Layout Components Pattern helps to avoid the prop drilling problem and enhances the reusability of your components.
 
-## Last Ref
+## Lastest Ref
 
 The Latest Ref Pattern allows you to have a reference to the latest value of a prop, state, or callback without needing to list it in a dependency array when accessing it in a useEffect.
 

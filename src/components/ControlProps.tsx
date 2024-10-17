@@ -105,12 +105,14 @@ export function ControlProps() {
             <div className='mb-10'>
                 <p className='mb-3'>Controlled Toggle</p>
                 <div className='flex gap-4'>
+                    {/* Parent can control the children state */}
                     <Toggle on={on} onChange={handleOnChange}/>
                     <Toggle on={on} onChange={handleOnChange}/>
                 </div>
             </div>
             <div>
                 <p>Uncontrolled Toggle</p>
+                 {/* The component can also have its own state */}
                 <Toggle />
             </div>
         </div>

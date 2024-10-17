@@ -68,6 +68,7 @@ export function StateInitializer() {
             <div><button className="text-blue-600" onClick={() => setInitialOn(on => !on)}>Initial On: {initialOn.toString()}</button></div>
             <Switch {...getTogglerProps({})}/>
             <div className='mt-5'>
+                {/* Even we change the initialOn, the reset button always works the same way (predictable) */}
                 <button onClick={reset}>Reset</button>
             </div>
         </div>

@@ -60,7 +60,8 @@ export function CompoundComponent() {
         <div>
             <h1 className='text-3xl mb-3'>Compound Component</h1>
             <Toggle>
-                {/* Benefit here is that we can freely switch around those components, making it flexible */}
+                {/* Benefit here is that we can freely switch around those components, rendering sth else between these component */}
+                {/* The layout is absolutely flexible */}
                 <ToggleOn>Button is on</ToggleOn>
                 <ToggleOff>Button is off</ToggleOff>
                 <ToggleButton/>
